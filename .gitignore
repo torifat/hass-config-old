@@ -13,3 +13,5 @@
 
 # Dashboard config
 !ui-lovelace.yaml
+# Contains area based dashboard config
+!areas/*

@@ -92,55 +92,7 @@ views:
 
       # Study
       - type: vertical-stack
-        cards:
-          - type: markdown
-            content: "## Study"
-            theme: tablet
-          - type: entity
-            entity: light.study_philips_bulb
-            state_color: true
-          - show_name: false
-            show_icon: true
-            show_state: true
-            type: glance
-            entities:
-              - entity: light.study_philips_bulb
-              - entity: sensor.rifats_iphone_battery_level
-              - entity: sensor.rifats_iphone_battery_state
-            state_color: true
-          - type: custom:mini-graph-card
-            name: Temperature
-            show:
-              legend: false
-            entities:
-              - entity: sensor.miaomiaoce_t2_6282_temperature_humidity_sensor
-                name: Study Sensor
-            color_thresholds:
-              - value: 9
-                color: "#389cf7"
-              - value: 24
-                color: "#8698a8"
-              - value: 27
-                color: "#f79237"
-              - value: 32
-                color: "#f7373c"
-          - type: custom:mini-graph-card
-            name: Humidity
-            show:
-              legend: false
-            line_color: var(--primary-color)
-            entities:
-              - entity: sensor.miaomiaoce_t2_6282_relative_humidity
-                name: Study Sensor
-          - show_name: false
-            show_icon: true
-            show_state: true
-            type: glance
-            entities:
-              - entity: sensor.miaomiaoce_t2_6282_temperature_humidity_sensor
-              - entity: sensor.miaomiaoce_t2_6282_relative_humidity
-              - entity: sensor.miaomiaoce_t2_6282_battery_level
-            state_color: true
+        cards: !include areas/ui-study.yaml
 
       # Bedroom
       - type: vertical-stack
@@ -148,6 +100,7 @@ views:
           - type: markdown
             content: "## Bedroom"
             theme: tablet
+
           - type: custom:mini-graph-card
             name: Temperature
             show:
@@ -164,6 +117,7 @@ views:
                 color: "#f79237"
               - value: 32
                 color: "#f7373c"
+
           - type: custom:mini-graph-card
             name: Humidity
             show:
@@ -172,6 +126,7 @@ views:
             entities:
               - entity: sensor.miaomiaoce_t2_1c41_relative_humidity
                 name: Bedroom Sensor
+
           - type: glance
             show_name: false
             show_icon: true
