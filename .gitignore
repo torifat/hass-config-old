@@ -1,0 +1,8 @@
+# Ignore everything by default.
+# This allows us to maintain an allow list instead of an ignore list.
+*
+
+# Track this file
+!.gitignore
+# Main HAAS Config
+!configuration.yaml

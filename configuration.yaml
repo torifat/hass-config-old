@@ -1,0 +1,20 @@
+homeassistant:
+  name: Home
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  unit_system: metric
+  temperature_unit: C
+  time_zone: Australia/Sydney
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+automation: !include automations.yaml
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Use MariaDB as storage
+recorder:
+  db_url: !secret recorder_db_url
+  commit_interval: 60
