@@ -9,9 +9,11 @@
 !configuration.yaml
 
 # Packages in Home Assistant provide a way to bundle different component’s configuration together.
+!packages
 !packages/*
 
 # Dashboard config
 !ui-lovelace.yaml
 # Contains area based dashboard config
+!areas
 !areas/*

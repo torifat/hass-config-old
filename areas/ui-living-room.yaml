@@ -1,0 +1,51 @@
+- type: markdown
+  content: "## Living Room"
+  theme: tablet
+- type: custom:mini-graph-card
+  name: Temperature
+  show:
+    legend: false
+  entities:
+    - entity: sensor.zhimi_mb3_8b95_temperature
+      name: Mi Air Purifier 3/3H
+  color_thresholds:
+    - value: 9
+      color: "#389cf7"
+    - value: 24
+      color: "#8698a8"
+    - value: 27
+      color: "#f79237"
+    - value: 32
+      color: "#f7373c"
+- type: custom:mini-graph-card
+  name: Humidity
+  show:
+    legend: false
+  line_color: var(--primary-color)
+  entities:
+    - entity: sensor.zhimi_mb3_8b95_relative_humidity
+      name: Mi Air Purifier 3/3H
+- type: entities
+  entities:
+    - entity: sensor.zhimi_mb3_8b95_filter_life_level
+      name: Filter Life Level
+  header:
+    # This works
+    type: custom:mini-graph-card
+    entities:
+      - entity: sensor.zhimi_mb3_8b95_pm25
+        name: Mi Air Purifier 3/3H
+    color_thresholds:
+      - value: 1
+        color: "#3cf737"
+      - value: 100
+        color: "#f7f237"
+      - value: 600
+        color: "#f7373c"
+  footer:
+    type: buttons
+    entities:
+      - switch.zhimi_mb3_8b95_switch_status
+      - switch.zhimi_mb3_8b95_physical_control_locked
+  show_header_toggle: false
+  state_color: true
