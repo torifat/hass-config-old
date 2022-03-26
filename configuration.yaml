@@ -1,18 +1,37 @@
 homeassistant:
   name: Home
-  latitude: !secret homeassistant_latitude
-  longitude: !secret homeassistant_longitude
   unit_system: metric
   temperature_unit: C
   time_zone: Australia/Sydney
+  currency: AUD
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  packages: !include_dir_named packages
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-automation: !include automations.yaml
+lovelace:
+  # use ui-lovelace.yaml
+  mode: yaml
+  resources:
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /hacsfiles/light-entity-card/light-entity-card.js
+      type: module
+    - url: /hacsfiles/light-popup-card/light-popup-card.js
+      type: module
+    - url: https://fonts.googleapis.com/css?family=Comfortaa&display=swap
+      type: css
+    - url: /local/style.css
+      type: css
 
 frontend:
   themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
 
 # Use MariaDB as storage
 recorder:

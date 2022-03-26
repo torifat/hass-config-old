@@ -1,0 +1,176 @@
+title: Home
+views:
+  - theme: kibibit-dark-cards
+    path: default_view
+    title: Home
+    icon: mdi:greenhouse
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: "## &nbsp;"
+            theme: tablet
+          - type: weather-forecast
+            show_forecast: false
+            entity: weather.wolli_creek_hourly
+            secondary_info_attribute: humidity
+          - show_name: false
+            show_icon: true
+            show_state: true
+            type: glance
+            entities:
+              - entity: sensor.speedtest_download
+              - entity: sensor.speedtest_upload
+              - entity: sensor.speedtest_ping
+            state_color: false
+          - type: glance
+            entities:
+              - entity: sensor.rpi_cpu
+              - entity: sensor.rpi_mem
+              - entity: sensor.rpi_sd
+          - show_forecast: true
+            type: weather-forecast
+            entity: weather.wolli_creek
+            secondary_info_attribute: humidity
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: "## Living Room"
+            theme: tablet
+          - type: custom:mini-graph-card
+            name: Temperature
+            show:
+              legend: false
+            entities:
+              - entity: sensor.zhimi_mb3_8b95_temperature
+                name: Mi Air Purifier 3/3H
+            color_thresholds:
+              - value: 9
+                color: "#389cf7"
+              - value: 24
+                color: "#8698a8"
+              - value: 27
+                color: "#f79237"
+              - value: 32
+                color: "#f7373c"
+          - type: custom:mini-graph-card
+            name: Humidity
+            show:
+              legend: false
+            line_color: var(--primary-color)
+            entities:
+              - entity: sensor.zhimi_mb3_8b95_relative_humidity
+                name: Mi Air Purifier 3/3H
+          - type: entities
+            entities:
+              - entity: sensor.zhimi_mb3_8b95_filter_life_level
+                name: Filter Life Level
+            header:
+              # This works
+              type: custom:mini-graph-card
+              entities:
+                - entity: sensor.zhimi_mb3_8b95_pm25
+                  name: Mi Air Purifier 3/3H
+              color_thresholds:
+                - value: 1
+                  color: "#3cf737"
+                - value: 100
+                  color: "#f7f237"
+                - value: 600
+                  color: "#f7373c"
+            footer:
+              type: buttons
+              entities:
+                - switch.zhimi_mb3_8b95_switch_status
+                - switch.zhimi_mb3_8b95_physical_control_locked
+            show_header_toggle: false
+            state_color: true
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: "## Study"
+            theme: tablet
+          - type: entity
+            entity: light.study_philips_bulb
+            state_color: true
+          - show_name: false
+            show_icon: true
+            show_state: true
+            type: glance
+            entities:
+              - entity: light.study_philips_bulb
+              - entity: sensor.rifats_iphone_battery_level
+              - entity: sensor.rifats_iphone_battery_state
+            state_color: true
+          - type: custom:mini-graph-card
+            name: Temperature
+            show:
+              legend: false
+            entities:
+              - entity: sensor.miaomiaoce_t2_6282_temperature_humidity_sensor
+                name: Study Sensor
+            color_thresholds:
+              - value: 9
+                color: "#389cf7"
+              - value: 24
+                color: "#8698a8"
+              - value: 27
+                color: "#f79237"
+              - value: 32
+                color: "#f7373c"
+          - type: custom:mini-graph-card
+            name: Humidity
+            show:
+              legend: false
+            line_color: var(--primary-color)
+            entities:
+              - entity: sensor.miaomiaoce_t2_6282_relative_humidity
+                name: Study Sensor
+          - show_name: false
+            show_icon: true
+            show_state: true
+            type: glance
+            entities:
+              - entity: sensor.miaomiaoce_t2_6282_temperature_humidity_sensor
+              - entity: sensor.miaomiaoce_t2_6282_relative_humidity
+              - entity: sensor.miaomiaoce_t2_6282_battery_level
+            state_color: true
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: "## Bedroom"
+            theme: tablet
+          - type: custom:mini-graph-card
+            name: Temperature
+            show:
+              legend: false
+            entities:
+              - entity: sensor.miaomiaoce_t2_1c41_temperature_humidity_sensor
+                name: Bedroom Sensor
+            color_thresholds:
+              - value: 9
+                color: "#389cf7"
+              - value: 24
+                color: "#8698a8"
+              - value: 27
+                color: "#f79237"
+              - value: 32
+                color: "#f7373c"
+          - type: custom:mini-graph-card
+            name: Humidity
+            show:
+              legend: false
+            line_color: var(--primary-color)
+            entities:
+              - entity: sensor.miaomiaoce_t2_1c41_relative_humidity
+                name: Bedroom Sensor
+          - type: glance
+            show_name: false
+            show_icon: true
+            show_state: true
+            entities:
+              - entity: sensor.miaomiaoce_t2_1c41_temperature_humidity_sensor
+              - entity: sensor.miaomiaoce_t2_1c41_relative_humidity
+              - entity: sensor.miaomiaoce_t2_1c41_battery_level
+            state_color: true
