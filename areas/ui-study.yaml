@@ -4,6 +4,9 @@
 
 - type: custom:light-entity-card
   entity: light.study_philips_bulb
+  full_width_sliders: true
+  effects_list: false
+  show_slider_percent: true
 
 - type: custom:mini-graph-card
   name: Temperature
