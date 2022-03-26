@@ -1,0 +1,11 @@
+frontend:
+  extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js
+
+  themes:
+    kibibit-dark-cards:
+      state-icon-active-color: rgba(255, 214, 10, 1)
+
+    tablet:
+      ha-card-box-shadow: none
+      ha-card-background: none
