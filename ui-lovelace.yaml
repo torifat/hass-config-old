@@ -6,6 +6,7 @@ views:
     icon: mdi:greenhouse
     badges: []
     cards:
+      # First column
       - type: vertical-stack
         cards:
           - type: markdown
@@ -33,6 +34,8 @@ views:
             type: weather-forecast
             entity: weather.wolli_creek
             secondary_info_attribute: humidity
+
+      # Living Room
       - type: vertical-stack
         cards:
           - type: markdown
@@ -86,6 +89,8 @@ views:
                 - switch.zhimi_mb3_8b95_physical_control_locked
             show_header_toggle: false
             state_color: true
+
+      # Study
       - type: vertical-stack
         cards:
           - type: markdown
@@ -136,6 +141,8 @@ views:
               - entity: sensor.miaomiaoce_t2_6282_relative_humidity
               - entity: sensor.miaomiaoce_t2_6282_battery_level
             state_color: true
+
+      # Bedroom
       - type: vertical-stack
         cards:
           - type: markdown
