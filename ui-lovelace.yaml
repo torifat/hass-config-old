@@ -9,14 +9,11 @@ views:
       # First column
       - type: vertical-stack
         cards:
-          - type: markdown
-            content: "## &nbsp;"
-            theme: tablet
-
           - type: weather-forecast
             show_forecast: false
             entity: weather.wolli_creek_hourly
             secondary_info_attribute: humidity
+            theme: tablet
           
           - type: glance
             show_name: false
