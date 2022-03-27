@@ -12,26 +12,28 @@ views:
           - type: markdown
             content: "## &nbsp;"
             theme: tablet
+
           - type: weather-forecast
             show_forecast: false
             entity: weather.wolli_creek_hourly
             secondary_info_attribute: humidity
-          - show_name: false
-            show_icon: true
-            show_state: true
-            type: glance
+          
+          - type: glance
+            show_name: false
             entities:
               - entity: sensor.speedtest_download
               - entity: sensor.speedtest_upload
               - entity: sensor.speedtest_ping
-            state_color: false
+
           - type: glance
+            show_name: false
             entities:
-              - entity: sensor.rpi_cpu
-              - entity: sensor.rpi_mem
-              - entity: sensor.rpi_sd
-          - show_forecast: true
-            type: weather-forecast
+              - entity: sensor.processor_use
+              - entity: sensor.memory_use_percent
+              - entity: sensor.disk_free
+          
+          - type: weather-forecast
+            show_forecast: true
             entity: weather.wolli_creek
             secondary_info_attribute: humidity
 
