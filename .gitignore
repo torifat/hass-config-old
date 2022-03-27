@@ -17,3 +17,6 @@
 # Contains area based dashboard config
 !areas
 !areas/*
+
+# Other top level configs
+!sensors.yaml
