@@ -1,6 +1,6 @@
-- type: markdown
-  content: "## Living Room"
-  theme: tablet
+- type: custom:mushroom-title-card
+  title: "Living Room"
+
 - type: custom:mini-graph-card
   name: Temperature
   show:
