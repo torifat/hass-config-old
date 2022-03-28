@@ -1,11 +1,31 @@
-- type: markdown
-  content: "## Study"
-  theme: tablet
+- type: custom:mushroom-title-card
+  title: "Study"
+  
 
-# https://github.com/piitaya/lovelace-mushroom/blob/main/docs/cards/light.md
-- type: custom:mushroom-light-card
-  entity: light.study_philips_bulb
-  show_brightness_control: true
+- type: grid
+  columns: 2
+  square: false
+  cards:
+    # https://github.com/piitaya/lovelace-mushroom/blob/main/docs/cards/light.md
+    - type: custom:mushroom-light-card
+      entity: light.study_philips_bulb
+      # show_brightness_control: true
+    
+    # https://github.com/piitaya/lovelace-mushroom/blob/main/docs/cards/entity.md
+    - type: custom:mushroom-entity-card
+      name: "Sliding Door"
+      entity: binary_sensor.door_sensor_study_contact
+      icon_color: green
+
+
+- type: conditional
+  conditions:
+    - entity: binary_sensor.study_philips_bulb_update_available
+      state_not: "off"
+  card:
+    type: custom:mushroom-entity-card
+    entity: binary_sensor.study_philips_bulb_update_available
+    icon_color: deep-orange
 
 - type: custom:mini-graph-card
   name: Temperature

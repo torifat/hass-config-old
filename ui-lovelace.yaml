@@ -14,25 +14,53 @@ views:
             entity: weather.wolli_creek_hourly
             secondary_info_attribute: humidity
             theme: tablet
-          
-          - type: glance
-            show_name: false
-            entities:
-              - entity: sensor.speedtest_download
-              - entity: sensor.speedtest_upload
-              - entity: sensor.speedtest_ping
 
-          - type: glance
-            show_name: false
-            entities:
-              - entity: sensor.processor_use
-              - entity: sensor.memory_use_percent
-              - entity: sensor.disk_free
-          
+
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sun.sun
+                icon_color: amber
+
+              - type: conditional
+                conditions:
+                  - entity: sensor.hacs
+                    state_not: "0"
+                card:
+                  # https://github.com/piitaya/lovelace-mushroom/blob/main/docs/cards/entity.md
+                  type: custom:mushroom-entity-card
+                  name: "HACS"
+                  entity: sensor.hacs
+
+
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.processor_use
+
+              - type: custom:mushroom-entity-card
+                entity: sensor.memory_use_percent
+
+              - type: custom:mushroom-entity-card
+                entity: sensor.disk_use_percent
+                icon_color: teal
+
+              - type: custom:mushroom-entity-card
+                entity: sensor.disk_free
+                icon_color: teal
+
+
           - type: weather-forecast
             show_forecast: true
             entity: weather.wolli_creek
-            secondary_info_attribute: humidity
+            style: |
+              :host .content {
+                display: none;
+              }
 
       # Living Room
       - type: vertical-stack
