@@ -35,13 +35,21 @@
     entities:
       - entity: sensor.zhimi_mb3_8b95_pm25
         name: Mi Air Purifier 3/3H
+    # https://www.cleanairresources.com/resources/how-do-i-read-the-air-quality-index
     color_thresholds:
-      - value: 1
-        color: "#3cf737"
-      - value: 100
-        color: "#f7f237"
-      - value: 600
-        color: "#f7373c"
+      - value: 0
+        color: "#76ff03"
+      - value: 51
+        color: "#ffff00"
+      - value: 101
+        color: "#ff9100"
+      - value: 151
+        color: "#ff3d00"
+      - value: 201
+        color: "#d500f9"
+      - value: 301
+        color: "#d50000"
+
   footer:
     type: buttons
     entities:
