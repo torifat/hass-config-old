@@ -20,3 +20,8 @@
 
 # Other top level configs
 !sensors.yaml
+
+# ESPHome
+!esphome
+!esphome/*.yaml
+secrets.yaml
