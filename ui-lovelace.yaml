@@ -15,7 +15,6 @@ views:
             secondary_info_attribute: humidity
             theme: tablet
 
-
           - type: grid
             columns: 2
             square: false
@@ -24,16 +23,14 @@ views:
                 entity: sun.sun
                 icon_color: amber
 
-              - type: conditional
-                conditions:
-                  - entity: sensor.hacs
-                    state_not: "0"
-                card:
-                  # https://github.com/piitaya/lovelace-mushroom/blob/main/docs/cards/entity.md
-                  type: custom:mushroom-entity-card
-                  name: "HACS"
-                  entity: sensor.hacs
-
+                # https://github.com/piitaya/lovelace-mushroom/blob/main/docs/cards/update.md
+              - type: custom:mushroom-update-card
+                name: "HACS"
+                entity: sensor.hacs
+                use_entity_picture: false
+                tap_action:
+                  action: navigate
+                  navigation_path: /config/dashboard
 
           - type: grid
             columns: 2
@@ -52,7 +49,6 @@ views:
               - type: custom:mushroom-entity-card
                 entity: sensor.disk_free
                 icon_color: teal
-
 
           - type: weather-forecast
             show_forecast: true
