@@ -7,6 +7,7 @@ homeassistant:
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
   packages: !include_dir_named packages
+  external_url: !secret homeassistant_external_url 
 
 http:
   ssl_certificate: /ssl/fullchain.pem
@@ -54,3 +55,9 @@ influxdb:
 recorder:
   db_url: !secret recorder_db_url
   commit_interval: 60
+
+# Example configuration.yaml entry
+withings:
+  client_id: !secret withings_client_id
+  client_secret: !secret withings_client_secret
+  use_webhook: true
