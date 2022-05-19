@@ -42,6 +42,10 @@ frontend:
 automation: !include automations.yaml
 sensor: !include sensors.yaml
 
+# Text to speech
+tts:
+  - platform: google_translate
+
 # Store sensors data in InfluxDB
 influxdb:
   host: a0d7b954-influxdb
@@ -57,7 +61,7 @@ recorder:
   db_url: !secret recorder_db_url
   commit_interval: 60
 
-# Example configuration.yaml entry
+# Withings - weighing machine data
 withings:
   client_id: !secret withings_client_id
   client_secret: !secret withings_client_secret
