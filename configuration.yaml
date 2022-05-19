@@ -9,8 +9,9 @@ homeassistant:
   packages: !include_dir_named packages
   external_url: !secret homeassistant_external_url 
 
+# HTTP - https://www.home-assistant.io/integrations/http/
 http:
-  port: 443
+  server_port: 443
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
 
